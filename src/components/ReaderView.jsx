@@ -1,13 +1,12 @@
 import { useEffect, useRef } from 'react'
 import { useErrorMessage } from './ErrorMessageProvider'
 
-import Box from '@mui/material/Box'
+import CloseIcon from '@mui/icons-material/Close'
+import AppBar from '@mui/material/AppBar'
 import Dialog from '@mui/material/Dialog'
 import IconButton from '@mui/material/IconButton'
-import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import CloseIcon from '@mui/icons-material/Close'
 
 export default function ReaderView({ images, currentIndex, setCurrentIndex }) {
   const touchStartX = useRef(0)
