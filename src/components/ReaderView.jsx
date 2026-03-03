@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography'
 
 export default function ReaderView({ images, currentIndex, setCurrentIndex }) {
   const touchStartX = useRef(0)
+  const showErrorMessage = useErrorMessage()
 
   const currentImage = images[currentIndex]
 
@@ -17,7 +18,7 @@ export default function ReaderView({ images, currentIndex, setCurrentIndex }) {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1)
     } else {
-      useErrorMessage('This is the first page')
+      showErrorMessage('This is the first page')
     }
   }
 
@@ -25,7 +26,7 @@ export default function ReaderView({ images, currentIndex, setCurrentIndex }) {
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1)
     } else {
-      useErrorMessage('This is the last page')
+      showErrorMessage('This is the last page')
     }
   }
 

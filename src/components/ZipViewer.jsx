@@ -12,6 +12,7 @@ export default function ComicViewer({ archiveBlob }) {
   const [images, setImages] = useState(null)
   const [selectedImageIndex, setSelectedImageIndex] = useState(null)
   const [loading, setLoading] = useState(true)
+  const showErrorMessage = useErrorMessage()
 
   // Extract images from archive on mount
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function ComicViewer({ archiveBlob }) {
         setImages(extractedImages)
       })
       .catch((err) => {
-        useErrorMessage(err.message || 'Failed to extract archive')
+        showErrorMessage(err.message || 'Failed to extract archive')
       })
       .finally(() => {
         setLoading(false)
