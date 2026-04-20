@@ -18,16 +18,10 @@ export default defineConfig({
         theme_color: '#1976d2',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/',
-        icons: [
-          {
-            src: 'vite.svg',
-            type: 'image/svg+xml',
-            sizes: 'any',
-            purpose: 'any',
-          },
-        ],
       },
+      pwaAssets: {
+        image: "public/favicon.png",
+      }
     }),
   ],
   base: process.env.BASE_URL || '/',
